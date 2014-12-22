@@ -1,0 +1,156 @@
+<div>
+   
+<div class="cdInputs">
+<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'leading'" style="width: 210px;left:0px;top:30px;position:absolute;">
+	<div class="cdunits cdhelp" data-dojo-type="dijit/TitlePane" data-dojo-props="title: 'Units', toggleable: false, style:'width:200px;'">
+
+		<input class="cdunits cdfeet cdhelp" type="radio" data-dojo-type="dijit/form/RadioButton" name="units"  value="feet"/> Feet
+		<input class="cdunits cdmeters cdhelp" type="radio" data-dojo-type="dijit/form/RadioButton" name="units" checked value="meters" style="margin-left:30px"/> Meters
+	
+	</div>
+
+
+	
+	<div class="cdbaselayers" data-dojo-type="dijit/TitlePane" data-dojo-props="title: 'GIS Base Layers', toggleable: false, style:'width:200px;'">
+
+		<div class="displayLayers cdhelp"> </div>
+	
+	</div>
+	
+	<div data-dojo-type="dijit/TitlePane" data-dojo-props="title: 'Instructions', toggleable: false, style:'width:200px;'">
+
+		<div class="cdinfo" >Instructions Go Here</div>
+	
+	</div>
+
+</div>
+
+
+	<div class="windwaves claro" data-dojo-type="dijit/TitlePane" data-dojo-props="title: 'Waves/Winds/Water', toggleable: false, style:'width:252px;position:absolute;left:220px;top:38px;'">
+	
+	Wind Type:
+	<span class="wavetype  cdhelp">
+	<select name="inputWindType" style='width:130px' class="inputWindType">
+			<option value="Most Common" selected="selected">Most Common</option>
+			<option value="Average">Average</option>
+			<option value="Storm">Storm</option>
+			<option value="Strong Storm">Strong Storm</option>
+			<option value="Maximum">Maximum</option>
+		</select>
+		</span>
+		<br><br>
+	Wave Definition:
+		<select name="inputWaveDef" style='width:100px' class="inputWaveDef">
+			<option value="WindWave" selected="selected">WindWave</option>
+			<option value="Direct" >Direct </option>
+		</select>
+
+	
+<br><br>
+	<!--<div class="waterlevel" data-dojo-type="dijit/TitlePane" data-dojo-props="title: 'Water Level', toggleable: false, style:'width:160px;position:absolute;left:379px;top:38px;'">
+		-->
+	Water Level:
+	<select name="inputWaterLevel" style='width:100px' class="inputWaterLevel">
+			<option value="MHHW">MHHW</option>
+			<option value="MHW" >MHW</option>
+			<option value="MSL">MSL</option>
+			<option value="MLLW">MLLW</option>
+		</select>
+	<!--
+	</div>-->
+	
+	</div>
+	
+	<div class="" data-dojo-type="dijit/TitlePane" data-dojo-props="title: 'Reef Shape', toggleable: false, style:'width:200px;position:absolute;left:470px;top:38px;'">
+	
+	<span class="reefshape cdhelp">
+	Reef Type:
+	<select name="inputReefType" style='width:100px' class="inputReefType">
+			<option value="Trapz">Trapezoid</option>
+			<option value="Dome" >Dome</option>
+		</select>
+	</span>
+	
+	<br>
+	<span class="reefheight cdhelp">
+	<span style='margin-right:25px'>Height:</span> <input type="text" name="inputReefHeight" class="inputReefHeight" value="1"
+    data-dojo-type="dijit/form/TextBox"
+    data-dojo-props=""  style='width:50px;height:30px' />
+	</span>
+	<br>
+	
+	<span class="basewidth cdhelp">
+	Base Width: <input type="text" name="inputReefBaseWidth" class="inputReefBaseWidth" value="12"
+    data-dojo-type="dijit/form/TextBox"
+    data-dojo-props="" style='width:50px;height:30px'/>
+	</span>
+	
+	<br>
+	
+	<span class="crestwidth cdhelp">
+	Crest Width: <input type="text" name="inputReefCrestWidth" class="inputReefCrestWidth" value="8"
+    data-dojo-type="dijit/form/TextBox"
+    data-dojo-props="" style='width:50px;height:30px'/>
+	<br>
+	</span>
+	
+	
+	</div>
+	
+	<div class="cdchartarea" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'leading'" style="width: 490px;position:absolute;left:220px;top:200px;">
+	
+	<span class="reefdistance cdhelp">
+	<div style="padding-bottom:10px"> <center><b> * Use the sliders to change the location of the reef (distance from shore) * </b></center> </div>
+	<div class ="cdslider"> </div>
+	<div class ="cdlinechart" style="width: 480px; height: 250px"> </div>
+	<div class ="cdlegend" style="width: 450px; height: 250px"> </div>
+	</span>
+	
+	</div>
+	
+	<div class="buttonarea" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'leading'" style="width: 250px;position:absolute;left:420px;top:483px;">
+	<button data-dojo-type="dijit/form/Button" type="button" class="runButton" >Run Scenario</button>
+	
+	<button class="newProfileButton" data-dojo-type="dijit/form/Button" type="button">Select New Profile</button>
+	<button class="newSiteButton" data-dojo-type="dijit/form/Button" type="button">Choose another site</button>
+	
+	</div>
+
+</div>
+	
+<div class="cdLoading" style="display:none;">
+	<br>
+	<br>
+	<br><center>Please wait a moment for the model to run on the server and return the results.  This process may take several minutes.<br/><br/><br/><img src='plugins/coastal_defense/images/loading.gif'></center>
+				
+</div>
+
+
+<div class="cdResults" style="display:none; padding: 10px" >
+		<div style="width: 695px; height: 450px;">
+			<div class="cdchartTabs"></div>
+		</div>
+		
+
+		
+		<div class ="cdoutmess" style="width: 600px;font-size:20px;font-weight:bold;line-height:120%"> </div>
+		
+	<div class="buttonarea2" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'leading'" style="width: 300px;position:absolute;left:400px;top:390px;">
+	<button data-dojo-type="dijit/form/Button" type="button" class="viewdetail" >View Detailed Output</button>
+	
+	<button class="newProfileButton" data-dojo-type="dijit/form/Button" type="button">Select New Profile</button>
+	<button class="newSiteButton" data-dojo-type="dijit/form/Button" type="button">Choose another site</button>
+	<button class="modProfileButton" data-dojo-type="dijit/form/Button" type="button">Modify This Profile</button>
+	</div>
+	
+</div> 
+
+
+	
+    <!--<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'top'">Top pane</div>
+    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'leading'">leading</div>
+    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'">center</div>
+    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'trailing'">Trailing pane</div>
+    <div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'bottom'">Bottom pane</div> -->
+
+</div>
